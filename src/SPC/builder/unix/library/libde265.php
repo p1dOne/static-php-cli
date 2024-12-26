@@ -30,7 +30,7 @@ trait libde265
                 '..'
             )
             ->exec("cmake --build . -j {$this->builder->concurrency}")
-            ->exec('make install');
+            ->exec('make install DESTDIR=' . BUILD_ROOT_PATH);
         $this->patchPkgconfPrefix(['libde265.pc']);
     }
 }
